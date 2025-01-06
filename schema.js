@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const authorNames = ["Alice Smith", "Bob Johnson", "Charlie Brown", "Diana Prince", "Ethan Hunt", "Fiona Gallagher", "George Lucas", "Helen Mirren", "Ian McKellen", "Julia Roberts"];
 
   const getRandomName = () => {
-    const randomIndex = Math.floor(Math.random() * authorNames.length);
-    return authorNames.splice(randomIndex, 1)[0];
+    return authorNames[Math.floor(Math.random() * authorNames.length)];
   };
 
   const schemaData = {
