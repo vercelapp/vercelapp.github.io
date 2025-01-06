@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const firstImage = document.querySelector('img')?.src || "https://example.com/photos/1x1/photo.jpg";
   const randomDatePublished = new Date(2024, Math.floor(Math.random() * 12), Math.ceil(Math.random() * 28), Math.floor(Math.random() * 24), Math.floor(Math.random() * 60), Math.floor(Math.random() * 60)).toISOString();
   const randomDateModified = new Date(2024, Math.floor(Math.random() * 12), Math.ceil(Math.random() * 28), Math.floor(Math.random() * 24), Math.floor(Math.random() * 60), Math.floor(Math.random() * 60)).toISOString();
-  const authorLinks = Array.from(document.querySelectorAll('a[href*="/index.html"]')).map(() => "/index.html");
+  const authorLinks = ["/index.html", "/index.html"];
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         "@type": "Person",
         "name": "Jane Doe",
-        "url": authorLinks[0] || "/index.html"
+        "url": authorLinks[0]
       },
       {
         "@type": "Person",
         "name": "John Doe",
-        "url": authorLinks[1] || "/index.html"
+        "url": authorLinks[1]
       }
     ]
   };
