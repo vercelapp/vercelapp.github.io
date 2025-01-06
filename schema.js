@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const getRandomDate = () => {
     const now = new Date();
-    const randomOffset = Math.floor(Math.random() * (365 * 24 * 60 * 60 * 1000)); // Random offset up to 1 year
+    const randomOffset = Math.floor(Math.random() * (365 * 24 * 60 * 60 * 1000));
     return new Date(now.getTime() - randomOffset).toISOString();
   };
 
@@ -17,11 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const randomDateModified = getRandomDate();
 
   const authorLinks = ["/index.html", "/index.html"];
+  const pageTitle = document.querySelector('title')?.textContent || "Unknown Title";
 
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
-    "headline": metaDescription,
+    "headline": pageTitle,
     "image": [
       firstImage
     ],
