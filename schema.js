@@ -3,13 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const firstImage = document.querySelector('img')?.src || "https://example.com/photos/1x1/photo.jpg";
 
   const getRandomDate = () => {
-    const year = 2024;
-    const month = Math.floor(Math.random() * 12); // 0-11
-    const day = Math.ceil(Math.random() * 28); // 1-28
-    const hour = Math.floor(Math.random() * 24); // 0-23
-    const minute = Math.floor(Math.random() * 60); // 0-59
-    const second = Math.floor(Math.random() * 60); // 0-59
-    return new Date(year, month, day, hour, minute, second).toISOString();
+    const now = new Date();
+    const randomOffset = Math.floor(Math.random() * (365 * 24 * 60 * 60 * 1000)); // Random offset up to 1 year
+    return new Date(now.getTime() - randomOffset).toISOString();
   };
 
   const randomDatePublished = getRandomDate();
