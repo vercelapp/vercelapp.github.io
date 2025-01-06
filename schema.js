@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const authorLinks = ["/index.html", "/index.html"];
   const authorNames = ["Alice Smith", "Bob Johnson", "Charlie Brown", "Diana Prince", "Ethan Hunt", "Fiona Gallagher", "George Lucas", "Helen Mirren", "Ian McKellen", "Julia Roberts"];
 
+  const getRandomName = () => authorNames[Math.floor(Math.random() * authorNames.length)];
+
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
@@ -18,12 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
     "author": [
       {
         "@type": "Person",
-        "name": authorNames[Math.floor(Math.random() * authorNames.length)],
+        "name": getRandomName(),
         "url": authorLinks[0]
       },
       {
         "@type": "Person",
-        "name": authorNames[Math.floor(Math.random() * authorNames.length)],
+        "name": getRandomName(),
         "url": authorLinks[1]
       }
     ]
