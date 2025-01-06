@@ -8,15 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return new Date(now.getTime() - randomOffset).toISOString();
   };
 
+  const getRandomName = () => {
+    const authorNames = ["Alice Smith", "Bob Johnson", "Charlie Brown", "Diana Prince", "Ethan Hunt", "Fiona Gallagher", "George Lucas", "Helen Mirren", "Ian McKellen", "Julia Roberts"];
+    return authorNames[Math.floor(Math.random() * authorNames.length)];
+  };
+
   const randomDatePublished = getRandomDate();
   const randomDateModified = getRandomDate();
 
   const authorLinks = ["/index.html", "/index.html"];
-  const authorNames = ["Alice Smith", "Bob Johnson", "Charlie Brown", "Diana Prince", "Ethan Hunt", "Fiona Gallagher", "George Lucas", "Helen Mirren", "Ian McKellen", "Julia Roberts"];
-
-  const getRandomName = () => {
-    return authorNames[Math.floor(Math.random() * authorNames.length)];
-  };
 
   const schemaData = {
     "@context": "https://schema.org",
