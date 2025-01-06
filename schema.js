@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const randomDatePublished = new Date(2024, Math.floor(Math.random() * 12), Math.ceil(Math.random() * 28), Math.floor(Math.random() * 24), Math.floor(Math.random() * 60), Math.floor(Math.random() * 60)).toISOString();
   const randomDateModified = new Date(2024, Math.floor(Math.random() * 12), Math.ceil(Math.random() * 28), Math.floor(Math.random() * 24), Math.floor(Math.random() * 60), Math.floor(Math.random() * 60)).toISOString();
   const authorLinks = ["/index.html", "/index.html"];
+  const authorNames = ["Alice Smith", "Bob Johnson", "Charlie Brown", "Diana Prince", "Ethan Hunt", "Fiona Gallagher", "George Lucas", "Helen Mirren", "Ian McKellen", "Julia Roberts"];
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -17,12 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
     "author": [
       {
         "@type": "Person",
-        "name": "Jane Doe",
+        "name": authorNames[Math.floor(Math.random() * authorNames.length)],
         "url": authorLinks[0]
       },
       {
         "@type": "Person",
-        "name": "John Doe",
+        "name": authorNames[Math.floor(Math.random() * authorNames.length)],
         "url": authorLinks[1]
       }
     ]
